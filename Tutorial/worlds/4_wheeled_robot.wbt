@@ -1,0 +1,215 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.29464291495382083 0.020944809369359416 0.9553778664109801 3.0059836611337616
+  position 0.7408947838778067 -0.2230510939647906 0.5816846365443133
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+WoodenBox {
+  translation 0.4000000018291692 1.829169161996155e-09 0.04980380000000001
+  rotation -0.24487663798538528 0.4300733426552067 -0.8689489928104822 5.2364896709543144e-17
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.23744999817083104 -0.09067369817083085 0.049803800000000016
+  rotation 0.22002237226453597 0.0528282878209252 0.9740633078547798 6.429379392276321e-17
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.20399400182916896 -0.227406998170831 0.049803800000000016
+  rotation -0.5649976029446556 -0.36911102363411785 -0.7379259860572515 2.2214528952474873e-17
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+DEF wall Solid {
+  translation 0.5 0 0.05
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance DEF wall_properties PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF wall Solid {
+  translation 0 -0.5 0.05
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+}
+DEF wall Solid {
+  translation 0 0.5 0.05
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+}
+DEF wall Solid {
+  translation -0.5 0 0.05
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+}
+Robot {
+  translation 0 0 0.05
+  children [
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Box {
+        size 0.2 0.1 0.05
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.647624309600776e-07
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000000000016735 -0.060000000000125515 2.7421308738326267e-06
+        rotation 0.9999999999971115 -1.6995454542445604e-06 1.6995512774758404e-06 1.5707994594319816
+        children [
+          DEF WHEEL Shape {
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+          mass 1
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.6481209922833916e-07
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.0600000000001864 -0.06000000000010418 3.1446140425009372e-06
+        rotation 0.9999999999972701 -1.6522076258462563e-06 1.652213312154789e-06 1.5707994553790556
+        children [
+          DEF WHEEL Shape {
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+          mass 1
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2.4636948049105964e-07
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.06 0.060000000000255044 4.306398211483362e-06
+        rotation 0.9999999999971915 -1.6758765401153472e-06 1.6758824502143357e-06 1.5707993646919474
+        children [
+          DEF WHEEL Shape {
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+        linearVelocity 1.7738852348231916e-16 -1.2277023897380905e-15 3.75847913742235e-12
+        angularVelocity 2.648499873089541e-10 7.266411405298679e-13 -1.2994040218795218e-17
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2.4636948137923806e-07
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.06 0.06000000000023123 3.904158211536653e-06
+        rotation 0.9999999999971912 -1.675876540115347e-06 1.6758824502143338e-06 1.5707993646919485
+        children [
+          DEF WHEEL Shape {
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+        linearVelocity -1.7709329653065337e-16 -1.0344567740820115e-15 3.7590268992790715e-12
+        angularVelocity 2.64847438787708e-10 -7.294065912087516e-13 1.2823887982022835e-17
+      }
+    }
+  ]
+  boundingObject USE BODY
+}

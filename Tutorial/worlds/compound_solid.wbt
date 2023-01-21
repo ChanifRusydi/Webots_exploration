@@ -1,0 +1,187 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.27507525574381175 -0.05792862134902531 -0.9596759236878236 3.5404102777828204
+  position 1.685658528328322 -0.7342178913094042 1.1191892798293481
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+E-puck {
+  translation 0.38377954823914956 -0.4313942326002086 -3.1909382637342054e-05
+  rotation 0.001342807167503964 0.0019151005763743928 0.9999972646256053 -1.2230206840431617
+  controller "epuck_go_forward"
+}
+WoodenBox {
+  translation 0 0 0.1
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.23744999817083104 -0.09067369817083085 0.049803800000000016
+  rotation 0.9385673037923279 0.22535391812079986 -0.26135613220202797 1.5071985784734156e-17
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.20399400182916896 -0.227406998170831 0.049803800000000016
+  rotation -0.8142248276698842 0.4039238708460899 -0.41699332916326 2.7195784000867812e-17
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+Solid {
+  translation 0.19511475173224102 -0.014165407384762208 0.04958907954389492
+  rotation 0.164385227244105 0.9863190884448165 0.012335024657064006 0.8629183148840425
+  children [
+    DEF wall_properties Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../red_brick_wall.jpg"
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ]
+        }
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+DEF wall Solid {
+  translation 0.5 0 0.05
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance DEF wall_properties PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF wall Solid {
+  translation 0 -0.5 0.05
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+}
+DEF wall Solid {
+  translation 0 0.5 0.05
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+}
+DEF wall Solid {
+  translation -0.5 0 0.05
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+}
+Solid {
+  translation 0 0.239567 0.0855856
+  rotation 1 0 0 1.5107
+  children [
+    Transform {
+      translation 0 0 0.1
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+            }
+            texture ImageTexture {
+            }
+            textureTransform TextureTransform {
+            }
+          }
+          geometry Sphere {
+            radius 0.05
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0 -0.1
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+            }
+          }
+          geometry Sphere {
+            radius 0.05
+          }
+        }
+      ]
+    }
+    Shape {
+      appearance Appearance {
+        material Material {
+        }
+      }
+      geometry Cylinder {
+        height 0.2
+        radius 0.02
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject Plane {
+    size 0.5 0.5
+  }
+  physics Physics {
+    mass 2
+    centerOfMass [
+      0 0 0.01
+    ]
+  }
+}

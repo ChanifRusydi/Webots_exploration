@@ -1,0 +1,52 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.0721425649748966 0.043469393001233064 0.9964466178330614 2.06019384246928
+  position 1.4671557406653144 -1.9376228644204945 1.3950808454146009
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.25 0.25
+  wallHeight 0.05
+}
+E-puck {
+  hidden translation_1 0 0.026 0.02
+  hidden rotation_1 0 -1 0 2.566370614356974
+  hidden translation_2 0 -0.025999999999999964 0.02
+  hidden rotation_2 0 -0.9999999999999999 0 2.5663706143569702
+  translation -0.0410119 0.02 0.000502523
+  rotation -9.823865659784996e-08 0.9999996468281378 -0.0008404424965453304 0.0022268710251433814
+  controller "epuck_go_forward"
+}
+WoodenBox {
+  translation 1.8114691590171766e-09 0.2100000018114691 0.049803800057015526
+  rotation 0.7071067883874899 -0.7071067739856038 3.83824395444275e-08 5.006316675010016e-10
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.2374499981885309 -0.09067369818853084 0.049803800057015526
+  rotation 0.707106819996401 -0.7071067423766919 5.427738022728255e-09 5.006316862785249e-10
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.2039940018114691 -0.22740699818853086 0.049803800057015526
+  rotation 0.7071068019762499 -0.7071067603968442 2.4422548412806508e-08 5.006316627885011e-10
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 1
+}

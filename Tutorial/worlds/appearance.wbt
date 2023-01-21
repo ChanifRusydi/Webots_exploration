@@ -1,0 +1,124 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.004595980988208034 0.013114521407864205 0.999903438481436 5.608359427231119
+  position -2.129927572951015 1.529485738495581 0.4553372472843656
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+E-puck {
+  translation 0.06568381032475035 0.01918160176367898 -3.198150754991913e-05
+  rotation 0.00010505762271383107 0.018627775028602158 -0.9998264824260156 0.011306163005445838
+  controller "epuck_go_forward"
+}
+WoodenBox {
+  translation 1.8291691431844647e-09 0.21000000182916898 0.04980380000000005
+  rotation 0.6963101793552707 -0.7174655671166238 0.01988200513661099 4.652708391154369e-16
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.23744999817083104 -0.09067369817083085 0.04980380000000006
+  rotation 0.6962522956793569 -0.7166742512105803 -0.040134254857658314 4.979230597124764e-16
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.20399400182916896 -0.227406998170831 0.04980380000000006
+  rotation 0.6954323181764226 -0.7185294689949311 -0.009449498485618813 4.831096391416276e-16
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+Solid {
+  translation 0.19511475173224102 -0.014165407384762208 0.09671263744728367
+  rotation 0.164385227244105 0.9863190884448164 0.012335024657064006 0.8629183148840425
+  children [
+    DEF wall_properties Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../red_brick_wall.jpg"
+          ]
+        }
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+DEF wall Solid {
+  translation 0.5 0 0.05
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance DEF wall_properties PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF wall Solid {
+  translation 0 -0.5 0.05
+  rotation 0 0 -1 1.5708
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+}
+DEF wall Solid {
+  translation 0 0.5 0.05
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+}
+DEF wall Solid {
+  translation -0.5 0 0.05
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance USE wall_properties
+      geometry Box {
+        size 0.01 1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+}
